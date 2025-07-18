@@ -9,7 +9,11 @@ The VAERS data is verified and checked for reliability by Center of Disease Cont
 ## DATA PREPARATION
 Some key steps of data preparation are highlighted below which acted as a base for the model building.
 • Join the 3 datasets based on the VAERS_ID. The volume might increase from the base data as in the VAERSSYMPTOMS file can have multiple records for a single VAERS_ID. This is because, a single patient can have more than 5 symptoms which are inserted as multiple entries.
+
 • Categorical encoding is done on some of the variables like other meds, current illness, disabilities, sex, Vaccine manufacturer.
+
 • Date imputing is done using forward imputing and backward imputing rules as part of the data cleansing step. Records with irrelevant date are dropped. This step is done for Vaccine Intake date and Event Reported date.
+
 • 17 Baseline features have been identified based on the medical history column and they are encoded using dummies.
+
 • Records which are outliers for NUMDAYS are removed.
